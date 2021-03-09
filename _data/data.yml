@@ -117,7 +117,7 @@ projects:
       - title: Lights! Camera! Action! Learning a Lighting Policy for Robot Photography, <i>with Joe Connolly and Simon Mendelsohn</i>
         link: "assets/docs/CS459_Final_Report.pdf"
         tagline: |
-          We design and evaluate an autonomous lighting adjustment system for a robot photographer. The system utilizes deep reinforcement learning to learn how to adjust studio lighting for portrait-taking based on the environment, camera pose, and subject pose.
+          Fall 2019. We design and evaluate an autonomous lighting adjustment system for a robot photographer. The system utilizes deep reinforcement learning to learn how to adjust studio lighting for portrait-taking based on the environment, camera pose, and subject pose.
 
 publications:
     title: Publications
@@ -136,7 +136,7 @@ teaching:
       time: 2018 - 2020
       company: Matriculate
       details: |
-        Free college advising for low-income high school students 
+        Free college advising for low-income high school students (ASC-certified)
 
     - role: First-year Counselor
       time: 2019 - 2020
