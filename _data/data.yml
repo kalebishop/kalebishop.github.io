@@ -3,188 +3,189 @@
 #
 
 sidebar:
-    about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: False # set to False if you want education in main section instead of in sidebar
+    about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+    education: True # set to False if you want education in main section instead of in sidebar
 
     # Profile information
-    name: Kayleigh "KaleB" Bishop
-    tagline: Robotics PhD student by day, tired nerd by night
+    name: Alan Doe
+    tagline: Full Stack Developer
     avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
-    email: kabi2483@colorado.edu
-    phone: 
-    website:  #do not add http://
-    linkedin: kaleb-b-92470b112
-    github: kalebishop
+    email: hello@webjeda.com
+    phone: 012 345 6789
+    website: blog.webjeda.com #do not add http://
+    linkedin: alandoe
+    xing: alandoe
+    github: sharu725
     telegram: # add your nickname without '@' sign
     gitlab:
     bitbucket:
-    twitter:
+    twitter: '@webjeda'
     stack-overflow: # Number/Username, e.g. 123456/alandoe
     codewars:
     goodreads: # Number-Username, e.g. 123456-alandoe
-    icon_url: https://picrew.me/image_maker/137904
-    icon_author: Lully
-    cv: assets/docs/research_cv.pdf
 
     languages:
       - idiom: English
         level: Native
 
+      - idiom: French
+        level: Professional
+
       - idiom: Spanish
         level: Professional
 
-      - idiom: Korean
-        level: Intermediate
-
     interests:
-      - item: Cognitive science
+      - item: Climbing
         link:
 
-      - item: AI ethics
+      - item: Snowboarding
+        link:
 
-      - item: Social psychology
-
-      - item: Philosophy of language
-
-      - item: Addressing gender, racial, and income inequality in STEM
-
-      - item: Cool robots
+      - item: Cooking
         link:
 
 career-profile:
-    title: Overview
+    title: Career Profile
     summary: |
-      I'm  a PhD student interested in researching embodied computational models of human behavior, especially perceptual, linguistic, and social skills. 
-      Using knowledge of how humans perceive and operate on the world and the social beings around them can inform the creation of more intelligent, adaptive, and communicative systems. 
-      I am particularly interested in the potential application of these skills in <b>socially assistive robotics</b> and <b>robots for education</b>. 
-      My other interests include human-robot interaction, natural language processing, artificial intelligence, and social learning across cultures.
+      Summarise your career here lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit. You can [download this free resume/CV template here]().
+      Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      Donec quam felis, ultricies nec, pellentesque eu.
+      Second paragraph if required.
 education:
-    - degree: Ph.D. in Computer Science
-      university: University of Colorado at Boulder
-      time: 2020 - present
+    - degree: MSc in Computer Science
+      university: University of London
+      time: 2011 - 2012
       details: |
-        I'm in my first year of PhD study as part of the [HIRO](https://hiro-group.ronc.one/) and [CAIRO](http://cairo-lab.com/) labs here at Boulder, 
-        co-advised by Profs. Alessandro Roncone and Bradley Hayes. 
-        I'm also a co-investigator in the [Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/).  
-          - 2020 Chancellor's Fellow
-
-    - degree: B.S. in Cognitive Science (Honors)
-      university: Yale University
-      time: 2016-2020
+        Describe your study here lorem ipsum dolor sit amet, consectetuer
+        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+        pretium quis, sem.
+          - Bullet point
+          - Bullet point
+    - degree: BSc in Applied Mathematics
+      university: Bristol University
+      time: 2007 - 2011
       details: |
-        I majored in Cognitive Science with a concentration on Mind & Computation. 
-        My thesis, Grounded Natural Language for Collaborative Robotics, was advised by Prof. Brian Scassellati.  
-          - GPA: 3.92/4.00
-          - Graduated Magna Cum Laude
-
+        Describe your study here lorem ipsum dolor sit amet, consectetuer
+        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+        pretium quis, sem.
+          - Bullet point
+          - Bullet point
 experiences:
-    - role: Graduate Researcher
-      time: 2020 - present
-      company: CU Boulder, Department of Computer Science
+    - role: Lead Developer
+      time: 2015 - Present
+      company: Startup Hubs, San Francisco
       details: |
-        Graduate research assistant and co-investigator as part of the Human Interaction & Robotics Group 
-        and the Collaborative AI & Robotics Lab.
-
-    - role: Undergraduate Research Assistant
-      time: 2017 - 2020
-      company: Yale University, Department of Computer Science
+        Describe your role here lorem ipsum dolor sit amet, consectetuer
+        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+        enim. Donec pede justo. Sed ut perspiciatis unde omnis iste natus
+        error sit voluptatem accusantium doloremque laudantium, totam rem
+        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt explicabo.
+          - Bullet point
+          - Bullet point
+    - role: Senior Software Engineer
+      time: 2014 - 2015
+      company: Google, London
       details: |
-        Research assistant in the [Yale Social Robotics Lab](https://scazlab.yale.edu/) (aka Scazlab).
-
+        Describe your role here lorem ipsum dolor sit amet, consectetuer
+        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem.
+          - Bullet point
+          - Bullet point
+    - role: UI Developer
+      time: 2012 - 2014
+      company: Amazon, London
+      details: |
+        Describe your role here lorem ipsum dolor sit amet, consectetuer
+        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem.
+          - Bullet point
+          - Bullet point
 projects:
     title: Projects
     intro: >
-      These are some of my most recent projects.
-
+      You can list your side projects or open source libraries in this
+      section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
     assignments:
-      - title: Towards equitable robot tutoring -- an intersectional analysis of human-robot interaction in racially diverse classrooms, <i>with Dr. Alessandro Roncone and Dr. Tiera Tanksley</i>
-        # link: "#hook"
-        tagline: |
-          2021-present (ongoing). We investigate the potential of autonomous pedagogical interventions for students from racially minoritized backgrounds. More specifically, this work will evaluate the performance of AI partners with early middle school Students of Color from low-income urban districts within the context of small group tutoring, with the goal of providing foundational insights on the specific needs of underserved students. Our long-term goal is to design and deploy socially and intellectually engaging AI partners that support both content learning and the development of constructive learning behaviors that will prepare students for their continuing educational careers.
+      - title: Velocity
+        link: "#hook"
+        tagline: "A responsive website template designed to help startups promote, market and sell their products."
 
-      - title: Teaching Grounded Language Skills via an Interactive Robot Tutor, <i>with Dr. Bradley Hayes</i>
-        link: "assets/docs/R4L-HRI2021_Bishop.pdf"
-        tagline: |
-          2021-present (ongoing). We propose and develop a classroom-based social robot tutoring system that targets reading comprehension skills using methods inspired by successful embodied reading pedagogical practices. This system will incorporate skill tracing of comprehension skills in order to identify problem areas, and to help students ground their reading in concrete experiences.
+      - title: DevStudio
+        link: "#"
+        tagline: "A responsive website template designed to help web developers/designers market their services."
 
-      - title: Grounded Natural Language for Collaborative Robotics, <i>with Jake Brawer and Dr. Brian Scassellati</i>
-        link: "assets/docs/cogsci_thesis.pdf"
-        tagline: |
-          2019-2020. Social and communicative barriers between humans and robots limit human-robot collaboration from reaching the fluency and intuitiveness of human-human interactions. I helped to address this limitation by creating a cognitively-inspired semantic grounding model for language generation, based largely on recent work in psychophysics and psycholinguistics. I collected a corpus of original referring expression data from human participants and analyzed it to ensure the model was based on sound and consistent principles of human speech. This model allowed the robot to dynamically generate natural and informative requests for tools and other task-relevant objects from a human partner.
-      
-      - title: Lights! Camera! Action! Learning a Lighting Policy for Robot Photography, <i>with Joe Connolly and Simon Mendelsohn</i>
-        link: "assets/docs/CS459_Final_Report.pdf"
-        tagline: |
-          Fall 2019. We design and evaluate an autonomous lighting adjustment system for a robot photographer. The system utilizes deep reinforcement learning to learn how to adjust studio lighting for portrait-taking based on the environment, camera pose, and subject pose.
+      - title: Tempo
+        link: "#"
+        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
+
+      - title: Atom
+        link: "#"
+        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
+
+      - title: Delta
+        link: "#"
+        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
 
 publications:
     title: Publications
-    intro: # |
-      # You can list your publications in this section. Lorem ipsum dolor sit
-      # amet, consectetur adipiscing elit. Vestibulum et ligula in nunc
-      # bibendum fringilla a eu lectus.
+    intro: |
+      You can list your publications in this section. Lorem ipsum dolor sit
+      amet, consectetur adipiscing elit. Vestibulum et ligula in nunc
+      bibendum fringilla a eu lectus.
     papers:
-      - title: Teaching grounded reading skills via an interactive robot tutor
-        link: "assets/docs/R4L-HRI2021_Bishop.pdf"
-        authors: K. Bishop, B. Hayes and A. Roncone
-        conference: Workshop on Robots for Learning, HRI 2021
+      - title: The Art of Computer Programming
+        link: "#"
+        authors: Donald E. Knuth
+        conference: Addison-Wesley, 1968
 
-teaching:
-    - role: Advising Fellow
-      time: 2018 - 2020
-      company: Matriculate
-      details: |
-        Free college advising for low-income high school students (ASC-certified)
+      - title: "Genetic Programming III: Darwinian Invention &amp; Problem Solving"
+        link: "#"
+        authors: Koza, J.R., Andre, D., Bennett, F.H., Keane, M.A.
+        conference: "Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edn. (1999)"
 
-    - role: First-year Counselor
-      time: 2019 - 2020
-      company: Yale University
-      details: |
-        Academic and residential advisor to first-year students
-
-    - role: Yale Summer Session Counselor
-      time: Summer 2019
-      company: Yale University
-      details: |
-        Residential advisor to high school students in summer course program
-
-    - role: Computer Science tutor
-      time: 2018 - 2019
-      company: Self-employed
-      details: |
-        Artificial Intelligence (Yale CPSC470) and Data Structures & Programming Techniques (Yale CPSC223)
-
-    - role: ONEXYS Mathematics Leader
-      time: Summer 2017
-      company: Yale University
-      details: |
-        Teaching college math fundamentals for incoming Yale students from low-income backgrounds
-      
-    
+      - title: A syntax directed compiler for Algol 60
+        link: "#"
+        authors: Edgar T. Irons
+        conference: "Comm. ACM 4 (1961), 51–55"
 
 skills:
-    title: Technical Skills &amp; Proficiency
+    title: Skills &amp; Proficiency
 
     toolset:
-      - name: Python and its many ML libraries (PyTorch, Tensorflow, OpenCV, etc.)
-        level: 95%
-
-      - name: ROS (Robot Operating System) package development
+      - name: Python & Django
         level: 98%
 
-      - name: Reinforcement Learning for real-world problem-solving
+      - name: Javascript & jQuery
+        level: 98%
+
+      - name: Angular
+        level: 98%
+
+      - name: HTML5 & CSS
+        level: 95%
+
+      - name: Ruby on Rails
         level: 85%
 
-      - name: Natural Language Processing for robotics applications
-        level: 80%
-
-      - name: C/C++, Java, Lisp
-        level: 70%
-
-      - name: Systems programming & software engineering
-        level: 70%
+      - name: Sketch & Photoshop
+        level: 60%
 
 footer: >
-    Modified from the lovely OnlineCV theme by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
+    Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
