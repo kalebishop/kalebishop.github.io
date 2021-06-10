@@ -61,7 +61,7 @@ content:
     content:
       - layout: top-middle
         title: Teaching grounded reading skills via an interactive robot tutor
-        link: "assets/docs/R4L-HRI2021_Bishop.pdf"
+        link: "kalebishop.github.io/assets/docs/R4L-HRI2021_Bishop.pdf"
         link_text: [PDF]
         # additional_links:
         #   - title:  sproogen/modern-resume-theme
