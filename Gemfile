@@ -24,4 +24,5 @@ group :jekyll_plugins do
   # gem "jekyll-archives"
   gem "commonmarker"
   gem 'hawkins'
+  gem "breakpoint"
 end
