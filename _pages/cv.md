@@ -12,7 +12,7 @@ redirect_from:
 ## education
 - Ph.D. in Computer Science, University of Colorado Boulder, _ongoing_
   * I'm in my second year of PhD study, co-advised by Profs. Alessandro Roncone and Bradley Hayes. 
-  * Executive Committee member, co-investigator, and software developer in the [Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/) 
+  * Executive Committee member, co-investigator, and software developer in the [NSF Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/) 
   * Awarded the Graduate School's Chancellor's Fellowship in 2020.
 
 - B.S. in Cognitive Science, Yale University, _2020_
@@ -24,6 +24,7 @@ redirect_from:
 - Research Assistant, CU Boulder Department of Computer Science
   * _Fall 2020 - present_
   * Graduate research assistant and co-investigator in the Human Interaction & Robotics Group and the Collaborative AI & Robotics Lab.
+  * Research affiliate with the NSF Institute for Student-AI Teaming (ISAT).
 
 - Undergraduate Research Assistant, Yale University Department of Computer Science
   * _Fall 2017 - Spring 2020_
@@ -47,6 +48,10 @@ redirect_from:
   {% endfor %}</ul>
 
 ## service & mentorship
+- [McNair Scholars Program](https://www.colorado.edu/mcnair/) Mento
+  * _Fall 2021 - present_
+  * Volunteer mentor for undergraduates in the CU chapter of the McNair Scholars program, which serves college students from underrepresented backgrounds who aspire to attain a doctoral degree.
+
 - Advising Fellow, [Matriculate](matriculate.org)
   * _Fall 2018 - Spring 2020_
   * Matriculate is a non-profit that connects high school students from low-income backgrounds with trained college counselors, who advise them throughout the college process during their final two years of high school.
