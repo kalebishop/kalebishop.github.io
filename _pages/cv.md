@@ -48,7 +48,7 @@ redirect_from:
   {% endfor %}</ul>
 
 ## service & mentorship
-- [McNair Scholars Program](https://www.colorado.edu/mcnair/) Mento
+- [McNair Scholars Program](https://www.colorado.edu/mcnair/) Mentor
   * _Fall 2021 - present_
   * Volunteer mentor for undergraduates in the CU chapter of the McNair Scholars program, which serves college students from underrepresented backgrounds who aspire to attain a doctoral degree.
 
