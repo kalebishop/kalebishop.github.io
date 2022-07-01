@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "kaleb bishop's personal website"
+title: "kayleigh bishop's personal website"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -11,7 +11,7 @@ redirect_from:
 ## about me
 I'm a current Computer Science PhD student at CU Boulder working in the [CAIRO](http://cairo-lab.com/) and [HIRO](https://hiro-group.ronc.one/) groups.
 
-I'm also an Executive Commitee member, graduate co-investigator, and software developer for the [NSF Institute for Student-AI Teaming](https://www.colorado.edu/research/ai-institute/).
+I'm also a graduate co-investigator for the [NSF Institute for Student-AI Teaming](https://www.colorado.edu/research/ai-institute/).
 
 Before starting my PhD program, I got my B.S. in Cognitive Science from Yale University. As a first-generation student from a low-income background, I'm personally passionate about addressing educational inequality and making scientific research accessible and inclusive to all.
 

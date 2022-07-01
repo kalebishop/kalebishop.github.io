@@ -12,7 +12,7 @@ redirect_from:
 ## education
 - Ph.D. in Computer Science, University of Colorado Boulder, _ongoing_
   * I'm in my second year of PhD study, co-advised by Profs. Alessandro Roncone and Bradley Hayes. 
-  * Executive Committee member, co-investigator, and software developer in the [NSF Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/) 
+  * 2021-2022 Executive Committee member, co-investigator, and software developer in the [NSF Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/) 
   * Awarded the Graduate School's Chancellor's Fellowship in 2020.
 
 - B.S. in Cognitive Science, Yale University, _2020_
