@@ -11,8 +11,8 @@ redirect_from:
 
 ## education
 - Ph.D. in Computer Science, University of Colorado Boulder, _ongoing_
-  * I'm in my second year of PhD study, co-advised by Profs. Alessandro Roncone and Bradley Hayes. 
-  * 2021-2022 Executive Committee member, co-investigator, and software developer in the [NSF Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/) 
+  * I'm in my third year of PhD study, co-advised by Profs. Alessandro Roncone and Bradley Hayes. 
+  <!-- * 2021-2022 Executive Committee member, co-investigator, and software developer in the [NSF Institute for Student-AI Teaming (ISAT)](https://outreach.colorado.edu/program/ai-institute-for-student-ai-teaming/)  -->
   * Awarded the Graduate School's Chancellor's Fellowship in 2020.
 
 - B.S. in Cognitive Science, Yale University, _2020_
@@ -49,7 +49,7 @@ redirect_from:
 
 ## service & mentorship
 - [McNair Scholars Program](https://www.colorado.edu/mcnair/) Mentor
-  * _Fall 2021 - present_
+  * _Fall 2021 - Spring 2022_
   * Volunteer mentor for undergraduates in the CU chapter of the McNair Scholars program, which serves college students from underrepresented backgrounds who aspire to attain a doctoral degree.
 
 - Advising Fellow, [Matriculate](matriculate.org)
