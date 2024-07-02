@@ -1,5 +1,5 @@
 ---
-title: "Bilevel Optimization for Just-in-Time Robotic Kitting and Delivery via Adaptive Task Segmentation and Scheduling (PREPRINT)"
+title: "Bilevel Optimization for Just-in-Time Robotic Kitting and Delivery via Adaptive Task Segmentation and Scheduling"
 collection: publications
 permalink: /publications/2022-ROMAN
 excerpt: 'We present a bilevel optimization framework
