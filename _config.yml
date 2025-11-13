@@ -81,13 +81,13 @@ analytics:
 # Site Author
 author:
   name             : "Kayleigh 'KaleB' Bishop"
-  avatar           : "icon.png"
-  bio              : "Robotics PhD student and part-time mad scientist"
+  avatar           : "avatar.jpeg"
+  bio              : "Robotics grad student and part-time mad scientist"
   location         : "Boulder, CO"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=IcMtTPYAAAAJ&hl=en"
-  email            : "kaleb.bishop@colorado.edu"
+  email            : "kaleb.bishop[at]colorado.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
