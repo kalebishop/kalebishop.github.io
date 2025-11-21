@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download my full CV as a PDF here.](http://kalebishop.github.io/files/aaaifss23.pdf/KBishop_CV.pdf).
+[Download my full CV as a PDF here.](http://kalebishop.github.io/files/KBishop_CV.pdf).
 
 ## education
 - Ph.D. in Computer Science, University of Colorado Boulder, _ongoing_
