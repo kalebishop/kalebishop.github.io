@@ -6,7 +6,7 @@ excerpt: 'We aim to combine the power of algorithmic approaches with the intuiti
 date: 2023-09-01
 venue: 'AAAI Fall Symposium Series'
 paperurl: 'http://kalebishop.github.io/files/2021-HRI-R4L.pdf'
-# citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+citation: 'Brawer, J., Bishop, K., Hayes, B., & Roncone, A. (2023). Towards a natural language interface for flexible multi-agent task assignment. Proceedings of the AAAI Symposium Series.'
 ---
 In this paper we propose a preliminary design for a flexible natural language interface for a task assignment system. The goal of our approach is both to grant users more control over a task assignment system’s decision process, as well as render these decisions more transparent. Users can direct the task assignment system via natural language commands, which are applied as constraints to a mixed-integer linear program (MILP) using a large language model (LLM). Additionally, our proposed system can alert users to potential issues with their commands, and engage them in a corrective dialogue in order to find a viable solution. 
 
