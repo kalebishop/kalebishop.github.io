@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 ## about me
-I'm an AI researcher specializing in human-AI interaction, LLM evaluation, and interpretable machine learning systems. My research investigates how structured representations, interactive AI systems, and empirical evaluation can improve reasoning, transparency, and decision-making in human-AI collaboration. Until recently, I was in the Ph.D. program at the University of Colorado Boulder (where I got my M.S.), working in the [CAIRO](http://cairo-lab.com/) group; this year, I decided to depart the program to pursue applied work in industry.
+I'm an AI researcher specializing in human-AI interaction, LLM evaluation, and interpretable machine learning systems. My research investigates how structured representations, interactive AI systems, and empirical evaluation can improve reasoning, transparency, and decision-making in human-AI collaboration. Until recently, I was in the Ph.D. program at the University of Colorado Boulder (where I got my M.S.), working in the [CAIRO](http://cairo-lab.com/) group; this year, I decided to depart the program and relocate back to the northeast to pursue applied work in industry.
 
 Before starting grad school, I got my B.S. in Cognitive Science from Yale University. As a first-generation student from a low-income background, I'm personally passionate about addressing educational inequality and making scientific research accessible and inclusive to all.
 

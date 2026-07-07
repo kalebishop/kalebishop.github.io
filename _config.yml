@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "kaleb.html"
 title_separator          : "-"
 name                     : &name "Kayleigh 'KaleB' Bishop"
-description              : &description "PhD student extraordinaire"
+description              : &description "Kayleigh Bishop's personal site"
 url                      : https://kalebishop.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kalebishop/kalebishop.github.io"
@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter "@kalebishop"
+  username               :
 facebook:
   username               :
   app_id                 :
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Kayleigh 'KaleB' Bishop"
   avatar           : "avatar.jpeg"
-  bio              : "Robotics grad student and part-time mad scientist"
-  location         : "Boulder, CO"
+  bio              : "Making AI systems more interpretable, interactive, and reliable."
+  location         : "Andover, MA"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=IcMtTPYAAAAJ&hl=en"
-  email            : "kaleb.bishop@colorado.edu"
+  email            : "kayleigh.bishop@colorado.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -102,14 +102,14 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/kayleigh-b-92470b112/"
   orcid            : 
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "kalebishop"
+  twitter          :
   vine             :
   weibo            :
   xing             :
