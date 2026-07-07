@@ -21,11 +21,16 @@ redirect_from:
   * Thesis: _Grounded Natural Language for Collaborative Robotics_, advised by Prof. Brian Scassellati.  
   * Graduated Magna Cum Laude, with Honors in the Major
 
+## technical skills
+- *LLM & Generative AI:* PyTorch, TensorFlow, Large Language Models (LLMs), Transformer architectures, Retrieval-Augmented Generation (RAG), LangChain, custom chain-of-thought integrations
+- *Evaluation & Research:* Model behavior analysis, structured output validation, failure mode analysis, state tracking, experimental design, user studies, Qualtrics, statistical hypothesis testing
+- *Software Engineering & Infrastructure:* Python, C++, SQL, Docker, Flask, FastAPI, Git/GitHub, ROS
+- *Scientific Computing:* Pandas, NumPy, SciPy, NetworkX, Matplotlib, structured telemetry analysis
+
 ## research experience
 - Research Assistant, CU Boulder Department of Computer Science
   * _Fall 2020 - Spring 2026_
-  * Graduate research assistant and co-investigator in the Human Interaction & Robotics Group and the Collaborative AI & Robotics Lab.
-  * Research affiliate with the NSF Institute for Student-AI Teaming (ISAT).
+  * Graduate research assistant and co-investigator in the Human Interaction & Robotics Group and the Collaborative AI & Robotics Lab; research affiliate with the NSF Institute for Student-AI Teaming (ISAT).
   * Investigated how structured task representations influence reasoning and information transfer in LLM-assisted human-AI collaboration by developing interactive decision-support systems integrating transformer models with explicit state tracking.
   * Designed multi-stage evaluation frameworks comparing LLM-generated reports against structured task ground truth, identifying systematic failure modes and significantly reducing information cost and misinformation through knowledge graph–based representations.
   * Developed telemetry-to-knowledge-graph pipelines modeling user behavior and system state, enabling interpretable analysis of AI-assisted workflows and structured evaluation of model behavior.
@@ -42,7 +47,7 @@ redirect_from:
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+
 ## talks
 
   <ul>{% for post in site.talks %}
