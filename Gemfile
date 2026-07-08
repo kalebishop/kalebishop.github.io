@@ -25,4 +25,7 @@ group :jekyll_plugins do
   gem "commonmarker"
   gem 'hawkins'
   gem "breakpoint"
+  gem "rexml"
 end
+
+gem "webrick", "~> 1.9"
