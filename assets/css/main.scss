@@ -1,5 +1,9 @@
---- // # Only the main Sass file needs front matter (the dashes are enough)
-search: false --- @charset "utf-8";
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
 
 // Override theme defaults before importing
 $max-width: 1920px; // allow main content to expand wider on large screens
