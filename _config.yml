@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Kayleigh 'KaleB' Bishop"
-  avatar           : "avatar.jpeg"
+  avatar           : "images/avatar.jpeg"
   bio              : "Making AI systems more interpretable, interactive, and reliable."
   location         : "Andover, MA"
   employer         :
@@ -241,7 +241,7 @@ defaults:
       path: ""
       type: talks
     values:
-      layout: talk
+      layout: single
       author_profile: true
       share: true
 

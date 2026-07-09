@@ -1,0 +1,568 @@
+---
+layout: null
+permalink: /handover-project/
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Handover — Natural Language Support for Handoff</title>
+  <meta name="description"
+    content="An AI-assisted system for reducing information loss during task handover, evaluated on a simulated hospital-floor task.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1C2430;
+      --amber: #E4A335;
+      --parchment: #F7F4EC;
+      --teal: #3D6B63;
+      --rust: #B5563C;
+      --ink-soft: #3A4250;
+      --hairline: rgba(28, 36, 48, 0.14);
+      --max-w: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--rust);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      position: relative;
+      padding: 96px 0 72px;
+      background: linear-gradient(180deg, #1C2430 0%, #2C3547 38%, #6B5A45 68%, #E4A335 100%);
+      color: #F7F4EC;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: rgba(247, 244, 236, 0.25);
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 236, 0.72);
+      margin: 0 0 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.08;
+      margin: 0 0 20px;
+      max-width: 11ch;
+    }
+
+    .hero p.dek {
+      font-size: 19px;
+      max-width: 46ch;
+      color: rgba(247, 244, 236, 0.88);
+      margin: 0 0 28px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      letter-spacing: 0.02em;
+      color: #1C2430;
+      background: rgba(247, 244, 236, 0.92);
+      padding: 7px 14px;
+      border-radius: 3px;
+    }
+
+    .status-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--rust);
+      display: inline-block;
+    }
+
+    /* ---------- Sections ---------- */
+
+    section {
+      padding: 64px 0;
+    }
+
+    .divider {
+      height: 3px;
+      background: linear-gradient(90deg, #1C2430, #6B5A45 55%, #E4A335);
+      border: none;
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 27px;
+      margin: 0 0 22px;
+      color: var(--ink);
+    }
+
+    h2 .num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--rust);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    section p {
+      margin: 0 0 18px;
+      color: var(--ink-soft);
+    }
+
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lede {
+      font-size: 20px;
+      color: var(--ink);
+    }
+
+    /* ---------- Approach diagram ---------- */
+
+    .flow {
+      position: relative;
+      margin: 40px 0 16px;
+      padding-left: 64px;
+    }
+
+    .flow::before {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 27px;
+      bottom: 27px;
+      width: 2px;
+      background: linear-gradient(180deg, #1C2430, #6B5A45 45%, #E4A335 80%, var(--rust));
+      opacity: 0.6;
+    }
+
+    .flow-step {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding-bottom: 30px;
+    }
+
+    .flow-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .icon-slot {
+      position: absolute;
+      left: -64px;
+      top: 0;
+      width: 54px;
+      height: 54px;
+      border: 1.5px dashed var(--hairline);
+      border-radius: 8px;
+      background: #FFFEFB;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-slot span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      opacity: 0.6;
+    }
+
+    .flow-step.system .icon-slot {
+      border-color: var(--teal);
+    }
+
+    .flow-step.human .icon-slot {
+      border-color: var(--rust);
+    }
+
+    .flow-step.merge .icon-slot {
+      border-color: #6B5A45;
+    }
+
+    .flow-step.output .icon-slot {
+      border-color: var(--amber);
+    }
+
+    .flow-body {
+      padding-top: 4px;
+      flex: 1;
+    }
+
+    .flow-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 4px;
+    }
+
+    .flow-title {
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 500;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+
+    .flow-desc {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    @media (max-width: 480px) {
+      .flow {
+        padding-left: 54px;
+      }
+
+      .flow::before {
+        left: 22px;
+      }
+
+      .icon-slot {
+        left: -54px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    /* ---------- Media / demo ---------- */
+
+    .media-frame {
+      border: 1px solid var(--hairline);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #11161F;
+      margin: 28px 0;
+    }
+
+    .media-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .media-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      padding: 10px 2px 0;
+    }
+
+    /* ---------- Team ---------- */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 24px 20px;
+      margin-top: 8px;
+    }
+
+    .team-member .name {
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 500;
+      margin: 0 0 2px;
+    }
+
+    .team-member .role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* ---------- Links / footer ---------- */
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .link-row a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      border: 1px solid var(--hairline);
+      padding: 9px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--ink);
+      background: #FFFEFB;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .link-row a:hover {
+      border-color: var(--rust);
+      color: var(--rust);
+    }
+
+    footer {
+      padding: 40px 0 64px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      color: var(--ink-soft);
+    }
+
+    footer a {
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 64px 0 56px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">CAIRO Lab · Research Project</p>
+      <h1>When work changes hands, what gets lost?</h1>
+      <p class="dek">An AI-assisted system for reducing information loss during task handover — tested on a simulated
+        hospital-floor task where a shift really does change.</p>
+      <span class="status-pill">Manuscript in preparation</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <h2><span class="num">01</span>The problem</h2>
+      <p class="lede">Handover is one of the most consistent points of failure in collaborative work — a nurse ending a
+        shift, an operator changing stations, a teammate stepping away mid-project. Whatever isn't said or written down
+        at that moment tends to be the thing the next person has to rediscover the hard way.</p>
+      <p>Handover has been studied closely in medicine, where standardized forms and mnemonics have measurably reduced
+        errors at shift-change. But those interventions are built around fixed checklists — they help people remember
+        what to say, without addressing what information is actually available to include, or how it should be
+        prioritized for the person receiving it. That's the space this project sits in: using system-side data alongside
+        a person's own account of what happened, so a handover report can be more complete than either source would be
+        alone.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <h2><span class="num">02</span>The approach</h2>
+      <p>The core idea is to treat two sources as complementary rather than redundant: what a system observed directly,
+        and what a person experienced and chose to report. Neither is complete on its own — system logs miss judgment
+        and context, human reports miss things people forget to mention or didn't think were worth writing down. The
+        system reconciles both into a single handover report.</p>
+
+      <div class="flow">
+        <div class="flow-step system">
+          <div class="icon-slot"><span>icon</span></div>
+          <div class="flow-body">
+            <p class="flow-eyebrow">Stage 1 · Input</p>
+            <p class="flow-title">Game telemetry + written report</p>
+            <p class="flow-desc">What the system observed, alongside what the person chose to write down.</p>
+          </div>
+        </div>
+        <div class="flow-step human">
+          <div class="icon-slot"><span>icon</span></div>
+          <div class="flow-body">
+            <p class="flow-eyebrow">Stage 2 · Digitizing</p>
+            <p class="flow-title">Structured task-state representation</p>
+            <p class="flow-desc">Both sources are converted into a common, structured representation of task state.</p>
+          </div>
+        </div>
+        <div class="flow-step merge">
+          <div class="icon-slot"><span>icon</span></div>
+          <div class="flow-body">
+            <p class="flow-eyebrow">Stage 3 · Merging</p>
+            <p class="flow-title">Cross-referencing &amp; reconciliation</p>
+            <p class="flow-desc">The two representations are compared and combined, surfacing overlaps, gaps, and
+              conflicts.</p>
+          </div>
+        </div>
+        <div class="flow-step merge">
+          <div class="icon-slot"><span>icon</span></div>
+          <div class="flow-body">
+            <p class="flow-eyebrow">Stage 4 · Synthesis</p>
+            <p class="flow-title">Consolidated task view</p>
+            <p class="flow-desc">A single, unified picture of where the task stands, ready to be described in plain
+              language.</p>
+          </div>
+        </div>
+        <div class="flow-step output">
+          <div class="icon-slot"><span>icon</span></div>
+          <div class="flow-body">
+            <p class="flow-eyebrow">Stage 5 · Output</p>
+            <p class="flow-title">Handover report</p>
+            <p class="flow-desc">A written report for the next person, emphasizing what's most useful to know.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>The system is designed to degrade gracefully — it can still produce a useful report from telemetry alone if no
+        human input is available, and improves as more human context is added.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <h2><span class="num">03</span>The testbed</h2>
+      <p>To study handover somewhere controlled and repeatable, we built a simplified simulation loosely inspired by
+        real human-factors research on nurses' cognitive work: a "hospital floor" task where participants juggle several
+        concurrent goals under time pressure, then get pulled away and asked to hand off to the next person — themselves
+        or someone else — with only a short window to write down what matters.</p>
+
+      <div class="media-frame">
+        <img src="/assets/img/handover-project/sim-screenshot.png"
+          alt="Screenshot of the pygame hospital-floor simulation used for the handover study"
+          onerror="this.closest('.media-frame').style.display='none'">
+      </div>
+      <p class="media-caption">// simulation screenshot — swap in your own capture</p>
+
+      <p>That constraint — a real person, a real clock, an imperfect account of a partially-finished task — is what
+        makes the handover problem concrete enough to actually measure.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <h2><span class="num">04</span>Status</h2>
+      <p>We're currently finalizing analysis and preparing the manuscript for submission. This page will be updated with
+        a preprint link once one is available — check back, or reach out directly if you'd like more detail in the
+        meantime.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <h2><span class="num">05</span>Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <p class="name">Kayleigh Bishop</p>
+          <p class="role">Lead</p>
+        </div>
+        <div class="team-member">
+          <p class="name">Maria Stull</p>
+          <p class="role">Collaborator</p>
+        </div>
+        <div class="team-member">
+          <p class="name">Breanne Crockett</p>
+          <p class="role">Collaborator</p>
+        </div>
+        <div class="team-member">
+          <p class="name">Bradley Hayes</p>
+          <p class="role">Advisor</p>
+        </div>
+      </div>
+
+      <div class="link-row">
+        <a href="https://github.com/cairo-robotics/verbal_task_handover">Code (GitHub)</a>
+        <a href="mailto:kayleighbishop345@gmail.com">Contact</a>
+        <!-- <a href="/paper.pdf">Preprint</a> add once available -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      K. Bishop · CAIRO Lab · <a href="/">back to home</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
