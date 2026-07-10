@@ -11,11 +11,6 @@ permalink: /handover-project/
   <title>Task Handover — Natural Language Support for Handoff</title>
   <meta name="description"
     content="An AI-assisted system for reducing information loss during task handover, evaluated on a simulated hospital-floor task.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
   <style>
     :root {
       --ink: #1C2430;
@@ -26,6 +21,9 @@ permalink: /handover-project/
       --ink-soft: #3A4250;
       --hairline: rgba(28, 36, 48, 0.14);
       --max-w: 760px;
+      --sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+      --serif: Georgia, Times, serif;
+      --monospace: Monaco, Consolas, "Lucida Console", monospace;
     }
 
     * {
@@ -40,7 +38,7 @@ permalink: /handover-project/
       margin: 0;
       background: var(--parchment);
       color: var(--ink);
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: var(--sans-serif);
       font-size: 18px;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -100,7 +98,7 @@ permalink: /handover-project/
     }
 
     .eyebrow {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -109,7 +107,7 @@ permalink: /handover-project/
     }
 
     .hero h1 {
-      font-family: 'Fraunces', serif;
+      font-family: var(--sans-serif);
       font-weight: 500;
       font-size: clamp(34px, 5vw, 52px);
       line-height: 1.08;
@@ -128,7 +126,7 @@ permalink: /handover-project/
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 12.5px;
       letter-spacing: 0.02em;
       color: #1C2430;
@@ -161,7 +159,7 @@ permalink: /handover-project/
     }
 
     h2 {
-      font-family: 'Fraunces', serif;
+      font-family: var(--sans-serif);
       font-weight: 500;
       font-size: 27px;
       margin: 0 0 22px;
@@ -169,7 +167,7 @@ permalink: /handover-project/
     }
 
     h2 .num {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 14px;
       color: var(--rust);
       font-weight: 500;
@@ -238,8 +236,17 @@ permalink: /handover-project/
       justify-content: center;
     }
 
+    .icon-slot img {
+      max-width: 70%;
+      max-height: 70%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
     .icon-slot span {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 9.5px;
       color: var(--ink-soft);
       text-transform: uppercase;
@@ -269,7 +276,7 @@ permalink: /handover-project/
     }
 
     .flow-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 11px;
       color: var(--ink-soft);
       text-transform: uppercase;
@@ -278,7 +285,7 @@ permalink: /handover-project/
     }
 
     .flow-title {
-      font-family: 'Fraunces', serif;
+      font-family: var(--sans-serif);
       font-size: 17px;
       font-weight: 500;
       margin: 0 0 4px;
@@ -324,7 +331,7 @@ permalink: /handover-project/
     }
 
     .media-caption {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 12.5px;
       color: var(--ink-soft);
       padding: 10px 2px 0;
@@ -340,14 +347,14 @@ permalink: /handover-project/
     }
 
     .team-member .name {
-      font-family: 'Fraunces', serif;
+      font-family: var(--sans-serif);
       font-size: 17px;
       font-weight: 500;
       margin: 0 0 2px;
     }
 
     .team-member .role {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 12px;
       color: var(--ink-soft);
       text-transform: uppercase;
@@ -364,7 +371,7 @@ permalink: /handover-project/
     }
 
     .link-row a {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 13.5px;
       border: 1px solid var(--hairline);
       padding: 9px 16px;
@@ -382,7 +389,7 @@ permalink: /handover-project/
 
     footer {
       padding: 40px 0 64px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--monospace);
       font-size: 12.5px;
       color: var(--ink-soft);
     }
@@ -444,15 +451,15 @@ permalink: /handover-project/
 
       <div class="flow">
         <div class="flow-step system">
-          <div class="icon-slot"><span>icon</span></div>
+          <div class="icon-slot"><img src="/images/handover_icons/report.svg" alt=""></div>
           <div class="flow-body">
             <p class="flow-eyebrow">Stage 1 · Input</p>
-            <p class="flow-title">Game telemetry + written report</p>
+            <p class="flow-title">System telemetry + written report</p>
             <p class="flow-desc">What the system observed, alongside what the person chose to write down.</p>
           </div>
         </div>
         <div class="flow-step human">
-          <div class="icon-slot"><span>icon</span></div>
+          <div class="icon-slot"><img src="/images/handover_icons/digitize.svg" alt=""></div>
           <div class="flow-body">
             <p class="flow-eyebrow">Stage 2 · Digitizing</p>
             <p class="flow-title">Structured task-state representation</p>
@@ -460,7 +467,7 @@ permalink: /handover-project/
           </div>
         </div>
         <div class="flow-step merge">
-          <div class="icon-slot"><span>icon</span></div>
+          <div class="icon-slot"><img src="/images/handover_icons/compare.svg" alt=""></div>
           <div class="flow-body">
             <p class="flow-eyebrow">Stage 3 · Merging</p>
             <p class="flow-title">Cross-referencing &amp; reconciliation</p>
@@ -469,7 +476,7 @@ permalink: /handover-project/
           </div>
         </div>
         <div class="flow-step merge">
-          <div class="icon-slot"><span>icon</span></div>
+          <div class="icon-slot"><img src="/images/handover_icons/synthesis.svg" alt=""></div>
           <div class="flow-body">
             <p class="flow-eyebrow">Stage 4 · Synthesis</p>
             <p class="flow-title">Consolidated task view</p>
@@ -478,7 +485,7 @@ permalink: /handover-project/
           </div>
         </div>
         <div class="flow-step output">
-          <div class="icon-slot"><span>icon</span></div>
+          <div class="icon-slot"><img src="/images/handover_icons/handover.svg" alt=""></div>
           <div class="flow-body">
             <p class="flow-eyebrow">Stage 5 · Output</p>
             <p class="flow-title">Handover report</p>
@@ -509,8 +516,8 @@ permalink: /handover-project/
       </div>
       <p class="media-caption">//</p>
 
-      <p>That constraint — a real person, a real clock, an imperfect account of a partially-finished task — is what
-        makes the handover problem concrete enough to actually measure.</p>
+      <p>That constraint (a real person, a real clock, an imperfect account of a partially-finished task) is what
+        makes the handover problem concrete enough to measure.</p>
     </div>
   </section>
 
