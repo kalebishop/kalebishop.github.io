@@ -1,0 +1,509 @@
+---
+layout: null
+permalink: /case-study-iac/
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measuring the Unseen Cost of AI Handovers — Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #EEF1ED;
+      --bg-raised: #F7F9F6;
+      --ink: #1E2422;
+      --ink-soft: #4B534E;
+      --line: #CBD3CB;
+      --teal: #1F6F6B;
+      --teal-dark: #164F4C;
+      --ochre: #B8842B;
+      --card-bg: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--teal-dark);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ochre);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-size: clamp(2.1rem, 5vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin: 0 0 22px;
+    }
+
+    .deck {
+      font-size: 19px;
+      color: var(--ink-soft);
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    /* ---------- ROUTE / WAYPOINT STRUCTURE ---------- */
+    section.stop {
+      position: relative;
+      padding: 52px 0 52px 34px;
+      border-left: 2px solid var(--line);
+      margin-left: 4px;
+    }
+
+    section.stop::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 56px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--teal);
+    }
+
+    section.stop:last-of-type {
+      border-left: 2px solid transparent;
+    }
+
+    .waypoint {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      margin: 0 0 18px;
+      letter-spacing: -0.005em;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    section.stop p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.conditions {
+      list-style: none;
+      margin: 22px 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    ul.conditions li {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 15.5px;
+    }
+
+    ul.conditions li strong {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      color: var(--teal-dark);
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ---------- STAT CALLOUTS ---------- */
+    .stats {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 28px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--ochre);
+      border-radius: 6px;
+      padding: 20px 22px;
+    }
+
+    .stat-card h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+
+    .stat-figures {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.5rem;
+      color: var(--teal-dark);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .stat-figures .arrow {
+      font-size: 1rem;
+      color: var(--ink-soft);
+    }
+
+    .stat-card p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    ul.mandate {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    ul.mandate li {
+      margin-bottom: 14px;
+    }
+
+    ul.mandate li:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.mandate strong {
+      color: var(--teal-dark);
+    }
+
+    /* ---------- DIAGRAM ---------- */
+    .diagram-card {
+      margin: 26px 0;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    /* ---------- VISUAL PLACEHOLDERS ---------- */
+    .visual-placeholder {
+      margin: 26px 0;
+      border: 1.5px dashed #A9B3AC;
+      border-radius: 8px;
+      background: repeating-linear-gradient(135deg,
+          rgba(31, 111, 107, 0.04),
+          rgba(31, 111, 107, 0.04) 10px,
+          transparent 10px,
+          transparent 20px);
+      padding: 34px 20px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .visual-placeholder .vp-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 40px 0 80px;
+      border-left: 2px solid transparent;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 64px 0 44px;
+      }
+
+      section.stop {
+        padding: 40px 0 40px 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="eyebrow">Case Study</div>
+      <h1>Measuring the Unseen Cost of AI Handovers</h1>
+      <p class="deck">AI systems and humans often diverge in their understanding of a shared task, and that divergence
+        gets expensive downstream. This project asks: how do you measure that cost before it shows up as user
+        frustration, lost time, or bad decisions?</p>
+    </div>
+
+    <section class="stop">
+      <div class="waypoint">The Gap</div>
+      <h2>What Users Need vs. What We Measure</h2>
+      <p>When users ask an AI for help catching up on a complex task, they receive a summary. But what they experience
+        is uncertainty: they don't know how much they can trust the summary, or what critical context it might be
+        missing.</p>
+      <p>Traditional evaluation methods like thumbs-up/thumbs-down ratings or raw accuracy scores fall short here. They
+        tell us if an answer is factually correct in isolation, but they fail to capture the user's mental model or the
+        downstream consequences of acting on incomplete information. We needed a way to uncover failure and recovery
+        behaviors when the system provides an answer that seems fine on the surface, but isn't.</p>
+    </section>
+
+    <section class="stop">
+      <div class="waypoint">The Metric</div>
+      <h2>From Soft Signal to Rubric: The Information Access Cost (IAC)</h2>
+      <p>To bridge this gap, I developed the Information Access Cost (IAC) metric. The goal was to operationalize idea
+        of a trustworthy and complete summary into a scorable, repeatable measurement.</p>
+      <p>Instead of just checking if an AI summary contained a fact, the IAC measures the search time and effort
+        required for whoever picks up the task next — a person or another system — to track down entities the summary
+        should have surfaced. If an AI report omits a detail or provides a vague direction, how many "rooms" or "steps"
+        will the user waste trying to resolve the ambiguity?</p>
+      <p>By modeling expected search traversals, we turned the "cost of an AI answer that seems fine but isn't" into a
+        concrete rubric. This allows us to penalize misinformation and omissions not just as errors, but as direct costs
+        to the user's time and trust.</p>
+
+      <div class="diagram-card">
+        <svg width="100%" viewBox="0 0 680 540" role="img" aria-labelledby="iacDiagramTitle iacDiagramDesc">
+          <title id="iacDiagramTitle">How the Information Access Cost score is derived</title>
+          <desc id="iacDiagramDesc">An AI report is checked against ground truth across three components, scored on a
+            credit tier, then converted into omission and misinformation costs, which combine into a single IAC score.
+          </desc>
+          <defs>
+            <marker id="iacArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+              orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#4B534E" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </marker>
+          </defs>
+
+          <rect x="180" y="40" width="320" height="56" rx="8" fill="#FFFFFF" stroke="#CBD3CB" stroke-width="1" />
+          <text x="340" y="60" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#1E2422">AI report vs. ground truth</text>
+          <text x="340" y="80" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#4B534E">Checked fact by fact</text>
+
+          <line x1="340" y1="96" x2="130" y2="140" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+          <line x1="340" y1="96" x2="330" y2="140" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+          <line x1="340" y1="96" x2="530" y2="140" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+
+          <rect x="40" y="140" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1" />
+          <text x="130" y="160" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#085041">Location score</text>
+          <text x="130" y="180" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#0F6E56">Where is the entity</text>
+
+          <rect x="240" y="140" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1" />
+          <text x="330" y="160" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#085041">Need score</text>
+          <text x="330" y="180" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#0F6E56">What's still needed</text>
+
+          <rect x="440" y="140" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1" />
+          <text x="530" y="160" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#085041">Resource score</text>
+          <text x="530" y="180" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#0F6E56">Where's the resource</text>
+
+          <line x1="130" y1="196" x2="130" y2="240" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+          <line x1="330" y1="196" x2="330" y2="240" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+          <line x1="530" y1="196" x2="530" y2="240" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+
+          <rect x="60" y="240" width="560" height="56" rx="8" fill="#FFFFFF" stroke="#CBD3CB" stroke-width="1" />
+          <text x="340" y="260" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#1E2422">Scored per component</text>
+          <text x="340" y="280" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#4B534E">Full, partial, contradicted, or none</text>
+
+          <line x1="340" y1="296" x2="185" y2="340" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+          <line x1="340" y1="296" x2="495" y2="340" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+
+          <rect x="40" y="340" width="290" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="1" />
+          <text x="185" y="360" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#633806">Omission cost</text>
+          <text x="185" y="380" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#854F0B">Credit not earned</text>
+
+          <rect x="350" y="340" width="290" height="56" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1" />
+          <text x="495" y="360" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#791F1F">Misinformation cost</text>
+          <text x="495" y="380" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#A32D2D">Wrong facts, weighted 3x</text>
+
+          <line x1="185" y1="396" x2="340" y2="440" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+          <line x1="495" y1="396" x2="340" y2="440" stroke="#4B534E" stroke-width="1" marker-end="url(#iacArrow)" />
+
+          <rect x="190" y="440" width="300" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1" />
+          <text x="340" y="460" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="14" font-weight="600" fill="#26215C">Combined IAC score</text>
+          <text x="340" y="480" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Sans, sans-serif"
+            font-size="12" fill="#3C3489">One score per AI report</text>
+        </svg>
+      </div>
+
+      <!-- <div class="visual-placeholder">
+      <span class="vp-label">Add here</span>
+      Worked example: a scored instance walking through the rubric
+    </div> -->
+    </section>
+
+    <section class="stop">
+      <div class="waypoint">The Study</div>
+      <h2>Study Design</h2>
+      <p>To isolate the impact of different AI reporting strategies, I designed a five-condition ablation study in a
+        simulated task environment built to model real information-seeking behavior — users searching a multi-room space
+        for entities relevant to their task:</p>
+
+      <ul class="conditions">
+        <li><strong>User-Only</strong> — Unaided human reporting.</li>
+        <li><strong>Full Realization (FR)</strong> — AI-generated structured, exhaustive coverage of the state.</li>
+        <li><strong>Task-Aware (TA)</strong> — AI reporting that filters for task-relevant information (needs,
+          locations).</li>
+        <li><strong>End-to-End (Raw Ablation)</strong> — Direct AI generation from raw logs without our structured
+          pipeline.</li>
+        <li><strong>Task-Aware without User Report</strong> — AI relying solely on system telemetry.</li>
+      </ul>
+
+      <p>This design was a deliberate method choice to isolate specific tradeoffs, such as
+        the value of structured data pipelines versus raw LLM processing, and exhaustive detail versus targeted
+        relevance.</p>
+    </section>
+
+    <section class="stop">
+      <div class="waypoint">The Findings</div>
+      <h2>Findings &amp; Product Implications</h2>
+      <p>The results were statistically significant, not just directional, as confirmed through non-parametric tests
+        appropriate for this kind of repeated-measures comparison.</p>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3>Massive search cost reductions</h3>
+          <div class="stat-figures">773.5 <span class="arrow">&rarr;</span> 241.2</div>
+          <p>The Task-Aware (TA) condition dropped the median Information Access Cost from User-Only to TA — users saved
+            around 526 steps on average, a highly significant improvement.</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Structure over raw processing</h3>
+          <div class="stat-figures">0% <span class="arrow">vs.</span> 65%</div>
+          <p>Bypassing a structured data pipeline (the End-to-End condition) led to confident but highly misleading AI
+            summaries on edge-capable models. TA practically eliminated false trails, compared to a 65% median
+            misinformation share in End-to-End — a highly significant difference, proving raw LLM processing is
+            quantifiably riskier than a structured approach.</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Relevance beats exhaustiveness</h3>
+          <p style="margin-top:2px">TA performed on par with the exhaustive Full Realization (FR) condition in absolute
+            cost savings (no significant difference between them) but reached that parity with significantly higher
+            communicative compression.</p>
+        </div>
+      </div>
+
+      <p><strong>So what?</strong> For a product team, these findings offer a clear mandate backed by rigorous data:</p>
+      <ul class="mandate">
+        <li><strong>Invest in state-reconciliation.</strong> The End-to-End failure proves that handing raw logs to an
+          LLM creates dangerous false trails. Product teams must build reconciliation layers to anchor AI summaries in
+          ground-truth state before generating text.</li>
+        <li><strong>Optimize for utility, not volume.</strong> Because TA matched FR's performance, we know users don't
+          need all the information — they just need the right information. Adopting the IAC rubric lets product teams
+          tune their AI to deliver targeted, high-utility insights that actually save users time without overwhelming
+          them.</li>
+      </ul>
+    </section>
+
+    <section class="stop">
+      <div class="waypoint">Looking Back</div>
+      <h2>Limitations and What I'd Do Differently</h2>
+      <p>While the IAC rubric successfully quantified search costs, the study was conducted in a constrained, simulated
+        environment. In reality, human search behavior is messier and less predictable than an idealized map traversal.
+        If I were to iterate on this, I would validate the IAC metric against real-world telemetry from a live product
+        to see how closely our modeled costs match actual user recovery times.</p>
+      <p>Additionally, the sample relied on specific LLM models; as models evolve, the baseline rate of spontaneous
+        "hallucinated" helpfulness might shift, requiring continuous recalibration of the rubric.</p>
+    </section>
+
+    <footer>
+      <p>Information Access Cost (IAC) study — full statistical detail available on request.</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
